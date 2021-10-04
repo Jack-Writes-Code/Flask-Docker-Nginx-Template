@@ -1,2 +1,48 @@
-# Flask-Docker-Nginx-Template
- A repo for quick starting using flask through docker, serving with gunicorn
+# ants
+
+<br>
+<h3>Template for Flask deployed through docker using gunicorn.</h3>
+<br>
+
+Edit /app/Dockerfile and uncomment the development option if deploying as a dev.
+
+Default port is 8080 for this project, you can change this in the docker-compose.yml file, the app/Dockerfile, app/main.py & app/wsgi.py
+
+Run using 'docker-compose up -d' in terminal.
+
+<br>
+<h3>To deploy using Ubuntu</h3>
+<br>
+
+Serving with nginx forward the port in sites-available:
+
+
+```
+server {
+        listen 80;
+        listen [::]:80;
+        server_name yourdomain.com;
+
+    location / {
+        proxy_pass         "http://0.0.0.0:8080";
+    }
+}
+```
+
+<br>
+
+Mirror the file from sites-available
+
+```
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+```
+
+
+
+
+<br>
+
+Then run the certbot to add SSL to your domain:
+```
+https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx
+```
