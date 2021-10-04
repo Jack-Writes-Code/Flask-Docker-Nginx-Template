@@ -14,7 +14,7 @@ Run using 'docker-compose up -d' in terminal.
 <h3>To deploy using Ubuntu</h3>
 <br>
 
-Serving with nginx forward the port in sites-available:
+Serving with nginx forward the port in /etc/nginx/sites-available/your_project_name:
 
 
 ```
@@ -34,7 +34,7 @@ server {
 Mirror the file from sites-available
 
 ```
-sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/your/project/name /etc/nginx/sites-enabled
 ```
 
 
