@@ -4,25 +4,30 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Favicon -->
         <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
-
-        <!-- Page title -->
         <title>{{ pageTitle }}</title>
+
+        <!-- CSS for this page -->
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/frame/main.css') }}">
     </head>
 
 
-    <nav><p>Standard nav section.</p></nav>
+    <!-- Page Header -->
+    <header>
+        <nav><p>Standard nav section.</p></nav>
+    </header>
 
 
 
-    <!-- Page content -->
     {% block content %}{% endblock content %}
 
 
 
+
     <!-- Page footer -->
-    <footer><p>Standard footer section.</p></footer>
+    <footer>
+        <p>Standard footer section.</p>
+    </footer>
+
 
 </html>
