@@ -1,4 +1,4 @@
-# ants
+# Flask-Docker-Template
 
 <br>
 <h3>Template for Flask deployed through docker using gunicorn.</h3>
